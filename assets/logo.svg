@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Gold 71 Café">
+  <defs>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#d8a642" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <circle cx="256" cy="256" r="238" fill="#050505" stroke="#d8a642" stroke-width="10" filter="url(#soft)"/>
+  <g fill="#f7f1e5">
+    <!-- g -->
+    <text x="54" y="298" font-family="Georgia, 'Times New Roman', serif" font-size="185" font-weight="700" letter-spacing="-10">g</text>
+    <!-- o as coffee bean -->
+    <ellipse cx="205" cy="213" rx="42" ry="52" transform="rotate(-16 205 213)"/>
+    <path d="M188 170 C210 190 217 219 205 257" fill="none" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <!-- ld -->
+    <text x="235" y="268" font-family="Georgia, 'Times New Roman', serif" font-size="126" font-weight="700" letter-spacing="-8">ld</text>
+    <!-- 71 custom approximation -->
+    <g transform="translate(336 74) skewX(-10)">
+      <path d="M0 24 L112 0 L119 39 L50 54 L20 213 L-23 205 L4 61 L-11 65 Z"/>
+      <path d="M133 8 L183 0 L156 284 L106 284 Z"/>
+    </g>
+    <!-- Café script approximation -->
+    <text x="155" y="348" font-family="Brush Script MT, 'Segoe Script', cursive" font-size="104" font-style="italic">Café</text>
+    <text x="428" y="96" font-family="Arial, sans-serif" font-size="31" font-weight="700">®</text>
+  </g>
+</svg>
