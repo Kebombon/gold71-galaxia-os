@@ -20,3 +20,10 @@ Si se abre como archivo local (`content://` o `file://`), algunos navegadores an
 ## Contraseña de historial de cierres
 
 Contraseña inicial: `7171`
+
+
+## v2.9
+- Auditoría parcial de menú: Limonada local corregida a $42 y se agregó Limonada mineral $46.
+- Productos ordenados alfabéticamente dentro de cada categoría.
+- Se agregó "Error de pedido" para marcar comandas incorrectas sin borrarlas; no suman a ventas ni productos vendidos.
+- Los errores quedan visibles en historial y cierres, con motivo y responsable.
