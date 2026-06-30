@@ -15,3 +15,9 @@
 - Ordena productos alfabéticamente por categoría.
 - Agrega flujo "Marcar error" para pedidos equivocados sin borrarlos.
 - Excluye errores de ventas reales y conteo de productos vendidos.
+
+## v3.0
+
+- Ventana de Error de pedido con selección por botones.
+- Responsable del error seleccionable: Kevin, Bere, Alex o Elias.
+- Motivo del error seleccionable por botones, sin escribir en teclado.

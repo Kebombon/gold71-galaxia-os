@@ -27,3 +27,8 @@ Contraseña inicial: `7171`
 - Productos ordenados alfabéticamente dentro de cada categoría.
 - Se agregó "Error de pedido" para marcar comandas incorrectas sin borrarlas; no suman a ventas ni productos vendidos.
 - Los errores quedan visibles en historial y cierres, con motivo y responsable.
+
+
+## v3.0
+
+Mejora el registro de errores: ahora se elige el responsable y el motivo con botones, pensado para tabletas lentas y uso rápido.
