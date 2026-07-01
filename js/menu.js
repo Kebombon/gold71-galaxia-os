@@ -125,7 +125,6 @@ window.GOLD71_MENU_RAW = [
 ['waffle-jamon-queso','Waffle Jamón y queso','Waffles salados',109,null,0],
 ['waffle-club','Club Waffle','Waffles salados',149,null,0],
 // Postres
-['flan-napolitano','Flan Napolitano','Postres',72,null,0],
 ['cuernito-cajeta','Cuernito Cajeta','Postres',59,59,1],
 ['cuernito-nutella','Cuernito Nutella','Postres',69,null,0]
 ];;

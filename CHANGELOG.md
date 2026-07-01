@@ -1,23 +1,23 @@
 # Changelog
 
-## v2.8
-- Corrección en pedidos Para llevar: bebidas embotelladas no generan cargo de envase.
-- Productos sin envase: Refresco/Coca, Coca Zero, Fuze Tea y Agua Bonafont.
+## v3.1
 
-## v2.7
-- Versión web organizada para GitHub Pages.
-- Logo integrado y emojis en secciones/categorías.
+- Se reemplaza el acceso directo a historial por botón de **Administración**.
+- Administración queda protegida con contraseña.
+- Dentro de Administración se agregan dos secciones: **Historial de cierres** e **Inventario**.
+- Historial de cierres ahora aparece segmentado por día con tarjetas resumen.
+- Cada tarjeta muestra total, Uber, DiDi, mesas, para llevar, personal, pedidos y errores.
+- Al abrir un cierre se muestran solo los datos de ese día.
+- Se agrega inventario real con columnas Inicial, Compra, Vendido, Esperado, Final y Diferencia.
+- Compra y Final se ajustan con botones + y − para evitar usar teclado en tablet.
+- Inventario se descuenta automáticamente según productos vendidos.
+- El inventario final queda guardado dentro del cierre y pasa como inicial del siguiente día.
+- Se elimina Flan Napolitano del menú local.
 
+## v3.0.1
 
-## v2.9
-- Corrige precio local de Limonada a $42.
-- Agrega Limonada mineral ($46).
-- Ordena productos alfabéticamente por categoría.
-- Agrega flujo "Marcar error" para pedidos equivocados sin borrarlos.
-- Excluye errores de ventas reales y conteo de productos vendidos.
+- Se agregaron Malteada fresa, vainilla y chocolate a Uber/DiDi con precio app de $95.
 
 ## v3.0
 
-- Ventana de Error de pedido con selección por botones.
-- Responsable del error seleccionable: Kevin, Bere, Alex o Elias.
-- Motivo del error seleccionable por botones, sin escribir en teclado.
+- Al marcar error, el responsable y motivo se seleccionan con botones.
