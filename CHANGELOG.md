@@ -21,3 +21,8 @@
 ## v3.0
 
 - Al marcar error, el responsable y motivo se seleccionan con botones.
+
+
+## v3.1.1
+- Se agregan parámetros de versión a los scripts para evitar que Chrome/GitHub Pages carguen JavaScript anterior en caché.
+- Se mantiene Administración con Historial de cierres e Inventario.
