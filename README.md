@@ -1,14 +1,9 @@
-# Gold 71 Café · Galaxia OS
+# Gold 71 Café · Galaxia OS v4.1
 
-Versión 4.0.
+Sistema web para pedidos, cortes, administración e inventario de Gold 71 Café.
 
-Proyecto organizado por módulos:
+## Cambios principales v4.1
 
-- `index.html`: estructura de la app.
-- `css/styles.css`: apariencia.
-- `js/config.js`: configuración general, empleados, orígenes, categorías y extras.
-- `js/menu.js`: productos y precios.
-- `js/inventory.js`: productos inventariados.
-- `js/app.js`: lógica de operación.
-
-Para actualizar GitHub Pages, sube/reemplaza todos los archivos y carpetas del ZIP descomprimido.
+- Edición administrativa de pedidos ya cerrados.
+- Recalculo automático del cierre al corregir pedidos históricos.
+- Registro visual de pedidos editados después del cierre.
