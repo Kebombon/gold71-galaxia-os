@@ -1,12 +1,25 @@
+
+## v5.1
+- Agrega tercera sección en Administración: Gráficas.
+- Agrega gráfica de barras para Top productos vendidos.
+- Agrega gráfica de dona/listado para Ventas por origen.
+- Agrega filtros Hoy, Semana, Mes y Todo.
+- En Top productos permite cambiar entre cantidad vendida e ingreso generado.
+
 # Changelog
 
-## v4.1
-- Permite editar pedidos dentro de cierres guardados desde Administración > Historial de cierres > Ver detalles.
-- Al guardar una corrección administrativa, se recalculan ventas, productos vendidos e inventario del cierre.
-- Los pedidos editados después del cierre quedan marcados como "Editado por administrador".
-- Mantiene Agua mineral en menú local y mejoras de inventario de v4.0.
+## v5.0
+- Reconstrucción estable desde el proyecto modular.
+- Corrige el error que impedía cargar correctamente la sección de Administración / Inventario.
+- Agrega Agua mineral ($32) en Mesa y Para llevar.
+- Corrige la edición de pedidos dentro de cierres guardados.
+- Al corregir un pedido cerrado, se recalculan ventas, productos vendidos e inventario del día.
+- El inventario conserva la posición al usar botones + / -.
+- Actualiza cache busting a ?v=5.0 para evitar que GitHub/Chrome carguen archivos viejos.
+
+## v4.2
+- Intenta corregir carga de archivos nuevos con versión ?v=4.2.
+- Hace visible el botón “Corregir pedido cerrado”.
 
 ## v4.0
-- Separación interna por módulos.
-- Agua mineral agregada a $32.
-- Inventario ya no regresa al inicio al usar + / −.
+- Separación en módulos: config.js, menu.js, inventory.js y app.js.
