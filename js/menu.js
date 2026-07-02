@@ -56,6 +56,7 @@ window.GOLD71_MENU_RAW = [
 ['coca-zero','Coca Zero','Bebidas',32,35,1],
 ['fuze-tea','Fuze Tea','Bebidas',32,35,1],
 ['agua-bonafont','Agua Bonafont','Bebidas',19,null,0],
+['agua-mineral','Agua mineral','Bebidas',32,null,0],
 ['maracuya','Maracuyá','Bebidas',49,null,0],
 ['limonada','Limonada','Bebidas',42,49,1],
 ['limonada-mineral','Limonada mineral','Bebidas',46,null,0],
