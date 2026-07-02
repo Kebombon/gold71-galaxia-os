@@ -4,7 +4,7 @@ const OWNER_PASSWORD=CONFIG.ownerPassword||'7171';
 const APP=CONFIG.app||{};
 const raw = window.GOLD71_MENU_RAW || [];
 const PRODUCTS=raw.map(([id,name,category,localPrice,appPrice,appAvailable])=>({id,name,category,localPrice,appPrice,appAvailable:!!appAvailable}));
-const $=id=>document.getElementById(id);const money=n=>'$'+Number(n||0).toFixed(0);const labels=Object.fromEntries(APP.origins||[]);const isError=o=>o&&o.status==='Error de pedido';const validOrders=orders=>(orders||[]).filter(o=>!isError(o));const fav=CONFIG.favorites||[];
+const $=id=>document.getElementById(id);const money=n=>'$'+Number(n||0).toFixed(0);const labels=Object.fromEntries(APP.origins||[]);const ORIGIN_COLORS={mesa:'#8b5cf6',llevar:'#ef4444',uber:'#065f46',didi:'#f97316',personal:'#3b82f6'};const isError=o=>o&&o.status==='Error de pedido';const validOrders=orders=>(orders||[]).filter(o=>!isError(o));const fav=CONFIG.favorites||[];
 let state={origin:'mesa',mesa:1,employee:null,account:1,category:'Favoritos',cart:[],orders:JSON.parse(localStorage.getItem('g71_orders')||'[]'),archives:JSON.parse(localStorage.getItem('g71_archives')||'[]'),seq:Number(localStorage.getItem('g71_seq')||1),target:null,editId:null,returnScreen:'screenActive',editArchiveId:null};
 function save(){localStorage.setItem('g71_orders',JSON.stringify(state.orders));localStorage.setItem('g71_seq',state.seq);localStorage.setItem('g71_archives',JSON.stringify(state.archives||[]))}
 function recalcCurrentTakeoutTotals(){let changed=false;state.orders.forEach(o=>{if(o.origin==='llevar'){const t=(o.items||[]).reduce((a,i)=>a+itemTotal(i),0)+packagingTotal(o.items||[]);if(o.total!==t){o.total=t;changed=true}}});if(changed)save()}
@@ -155,12 +155,18 @@ function renderTopProductsChart(period='today',metric='qty'){
   document.querySelectorAll('[data-chart-metric]').forEach(b=>b.onclick=()=>renderTopProductsChart(period,b.dataset.chartMetric));
 }
 function originChartData(orders){const labelsMap=Object.fromEntries(APP.origins||[]);const rows=(APP.origins||[]).map(([id,l])=>({id,label:l,total:0,count:0}));orders.forEach(o=>{const r=rows.find(x=>x.id===o.origin);if(r){r.total+=Number(o.total||0);r.count++}});return rows.filter(r=>r.total>0||r.count>0)}
-function renderOriginChart(period='today'){
-  const rows=originChartData(ordersForChart(period)), total=rows.reduce((a,r)=>a+r.total,0), colors=['#d4af37','#f7d77d','#8f6b1f','#c99732','#fff2b2'];
-  let acc=0;const stops=rows.map((r,i)=>{const start=total?acc/total*100:0;acc+=r.total;const end=total?acc/total*100:0;return `${colors[i%colors.length]} ${start}% ${end}%`}).join(',')||'#222 0 100%';
-  $('screenArchives').innerHTML=`<div class="panel"><div class="row between"><h2>🍩 Ventas por origen</h2><button id="chartsBack">Volver</button></div>${renderChartControls('origin',period,'revenue')}<div class="chartBox"><div class="donutWrap"><div class="donut" style="background:conic-gradient(${stops})"><div class="donutCenter"><span>${money(total)}</span><small>${periodLabel(period)}</small></div></div><div class="chartLegend">${rows.length?rows.map((r,i)=>`<div class="legendItem"><b><span class="sliceDot" style="background:${colors[i%colors.length]}"></span>${r.label}</b><br><small>${r.count} pedidos · ${total?Math.round(r.total/total*100):0}%</small><br><strong>${money(r.total)}</strong></div>`).join(''):'<div class="empty">No hay ventas en este periodo.</div>'}</div></div></div></div>`;
+function renderOriginChart(period='today', selected=null){
+  const rows=originChartData(ordersForChart(period));
+  const total=rows.reduce((a,r)=>a+r.total,0);
+  const colorFor=id=>ORIGIN_COLORS[id]||'#d4af37';
+  let acc=0;
+  const stops=rows.map(r=>{const start=total?acc/total*100:0;acc+=r.total;const end=total?acc/total*100:0;return `${colorFor(r.id)} ${start}% ${end}%`;}).join(',')||'#222 0 100%';
+  const selectedRow=rows.find(r=>r.id===selected)||rows[0]||null;
+  const detail=selectedRow?`<div class="originDetail" style="border-color:${colorFor(selectedRow.id)}"><h3>${selectedRow.label}</h3><div class="archiveGrid"><div class="archiveStat"><small>Ventas</small><b>${money(selectedRow.total)}</b></div><div class="archiveStat"><small>Pedidos</small><b>${selectedRow.count}</b></div><div class="archiveStat"><small>Ticket promedio</small><b>${money(selectedRow.count?selectedRow.total/selectedRow.count:0)}</b></div><div class="archiveStat"><small>Porcentaje</small><b>${total?Math.round(selectedRow.total/total*100):0}%</b></div></div></div>`:'';
+  $('screenArchives').innerHTML=`<div class="panel"><div class="row between"><h2>🍩 Ventas por origen</h2><button id="chartsBack">Volver</button></div>${renderChartControls('origin',period,'revenue')}<div class="chartBox"><div class="donutWrap"><div class="donut" style="background:conic-gradient(${stops})"><div class="donutCenter"><span>${money(total)}</span><small>${periodLabel(period)}</small></div></div><div class="chartLegend">${rows.length?rows.map(r=>`<button class="legendItem legendButton ${selectedRow&&selectedRow.id===r.id?'selected':''}" data-origin-chart="${r.id}" style="border-color:${selectedRow&&selectedRow.id===r.id?colorFor(r.id):'#282828'}"><b><span class="sliceDot" style="background:${colorFor(r.id)}"></span>${r.label}</b><br><small>${r.count} pedidos · ${total?Math.round(r.total/total*100):0}%</small><br><strong>${money(r.total)}</strong><br><small>Ticket prom.: ${money(r.count?r.total/r.count:0)}</small></button>`).join(''):'<div class="empty">No hay ventas en este periodo.</div>'}</div></div>${detail}</div></div>`;
   $('chartsBack').onclick=renderChartsHome;
-  document.querySelectorAll('[data-chart-period]').forEach(b=>b.onclick=()=>renderOriginChart(b.dataset.chartPeriod));
+  document.querySelectorAll('[data-chart-period]').forEach(b=>b.onclick=()=>renderOriginChart(b.dataset.chartPeriod,selected));
+  document.querySelectorAll('[data-origin-chart]').forEach(b=>b.onclick=()=>renderOriginChart(period,b.dataset.originChart));
 }
 function renderChartsHome(){
   $('screenArchives').innerHTML=`<div class="panel"><div class="row between"><h2>📈 Gráficas</h2><button id="adminBack">Volver</button></div><p class="mut">Consulta ventas acumuladas de pedidos actuales y cierres guardados.</p><div class="adminMenu"><button id="chartTop">🏆 Top productos vendidos</button><button id="chartOrigin">🍩 Ventas por origen</button></div></div>`;

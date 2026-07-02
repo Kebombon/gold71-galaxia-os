@@ -1,3 +1,14 @@
+# Changelog
+
+## v5.2
+- Colores diferenciados en gráfica de Ventas por origen.
+- Mesa ahora usa morado.
+- Para llevar ahora usa rojo.
+- Uber ahora usa verde oscuro.
+- DiDi ahora usa naranja.
+- Personal ahora usa azul.
+- La leyenda de Ventas por origen muestra ticket promedio y puede tocarse para ver detalle.
+
 
 ## v5.1
 - Agrega tercera sección en Administración: Gráficas.

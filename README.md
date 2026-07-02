@@ -1,4 +1,8 @@
-# Gold 71 Café · Galaxia OS v5.1
+# Gold 71 Café · Galaxia OS Web v5.2
+
+Versión con gráficas mejoradas y colores diferenciados por origen de venta.
+
+# Gold 71 Café · Galaxia OS v5.2
 
 Versión estable reconstruida desde la base modular.
 
@@ -15,6 +19,6 @@ Versión estable reconstruida desde la base modular.
 Contraseña de administración: 7171
 
 
-## v5.1
+## v5.2
 - Agrega módulo de Gráficas dentro de Administración.
 - Incluye Top productos vendidos y Ventas por origen con filtros por periodo.
