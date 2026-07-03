@@ -1,46 +1,28 @@
-// Configuración general de Gold 71 Café · Galaxia OS
-// Este archivo concentra opciones de operación para no mezclarlas con la lógica principal.
-window.GOLD71_CONFIG = {
-  version: '5.3',
-  ownerPassword: '7171',
-  app: {
-    packagingFee: 5,
-    noPackaging: ['refresco','coca-zero','fuze-tea','agua-bonafont','agua-mineral'],
-    origins: [
-      ['mesa','🪑 Mesa'],
-      ['llevar','🥡 Para llevar'],
-      ['didi','🛵 DiDi Food'],
-      ['uber','🛵 Uber Eats'],
-      ['personal','👤 Personal']
-    ],
-    employees: ['Kevin','Bere','Alex','Elias'],
-    quick: ['Sin azúcar','Sin cebolla','Sin jitomate','Sin lechuga','Extra queso','Poco hielo','Sin crema'],
-    extras: {
-      comida: [['Aguacate',20],['Queso',20],['Jamón',20],['Tocino',20],['Piña',20],['Aderezo',20],['Huevo',20],['Pollo',89],['Arrachera',89]],
-      desayuno: [['Queso',20],['Jamón',20],['Tocino',20],['Huevo',20],['Pollo',89],['Arrachera',89]],
-      ensalada: [['Aguacate',20],['Aderezo',20],['Pollo',89],['Arrachera',89]],
-      hamburguesa: [['Queso',20],['Tocino',20],['Piña',20],['Aguacate',20],['Huevo',20],['Pollo',89],['Arrachera',89]],
-      waffle: [['Queso',20],['Jamón',20],['Tocino',20],['Huevo',20],['Pollo',89],['Arrachera',89]]
-    }
-  },
-  favorites: ['cafe-americano','capuchino-grande','lechero','frappe-oreo','panini-turco','hamb-regia-green','croissant-chicken','limonada-fresa'],
-  categoryOrder: ['Entradas','Huevos','Ensaladas','Croissants','Sándwiches','Pastas','Hamburguesas','Paninis','Postres','Cafés fríos y frappés','Cafés','Bebidas','Tés','Waffles salados','Waffles dulces'],
-  categoryLabels: {
-    'Favoritos':'⭐ Favoritos',
-    'Entradas':'🍟 Entradas',
-    'Huevos':'🍳 Huevos',
-    'Ensaladas':'🥗 Ensaladas',
-    'Croissants':'🥐 Croissants',
-    'Sándwiches':'🥪 Sándwiches',
-    'Pastas':'🍝 Pastas',
-    'Hamburguesas':'🍔 Hamburguesas',
-    'Paninis':'🥖 Paninis',
-    'Postres':'🍰 Postres',
-    'Cafés fríos y frappés':'🧊 Cafés fríos',
-    'Cafés':'☕ Cafés calientes',
-    'Bebidas':'🥤 Bebidas',
-    'Tés':'🍵 Tés',
-    'Waffles salados':'🧇 Waffles salados',
-    'Waffles dulces':'🧇 Waffles dulces'
-  }
-};
+# Changelog
+
+## v5.3
+- El cierre del día ahora deja el inventario en estado pendiente.
+- El administrador puede confirmar el inventario después desde Historial de cierres.
+- Los cierres muestran estado: inventario pendiente o confirmado.
+- Al confirmar inventario, se guarda en el cierre y pasa como inicial del día actual.
+
+## v5.2
+- Colores diferenciados en gráfica de Ventas por origen.
+- Mesa usa morado, Para llevar rojo, Uber verde oscuro, DiDi naranja y Personal azul.
+- La leyenda de Ventas por origen muestra ticket promedio y puede tocarse para ver detalle.
+
+## v5.1
+- Agrega tercera sección en Administración: Gráficas.
+- Agrega gráfica de barras para Top productos vendidos.
+- Agrega gráfica de dona/listado para Ventas por origen.
+- Agrega filtros Hoy, Semana, Mes y Todo.
+- En Top productos permite cambiar entre cantidad vendida e ingreso generado.
+
+## v5.0
+- Reconstrucción estable desde el proyecto modular.
+- Corrige la sección de Administración / Inventario.
+- Agrega Agua mineral ($32) en Mesa y Para llevar.
+- Corrige la edición de pedidos dentro de cierres guardados.
+- Al corregir un pedido cerrado, se recalculan ventas, productos vendidos e inventario del día.
+- El inventario conserva la posición al usar botones + / -.
+- Actualiza cache busting a ?v=5.0 para evitar caché viejo.
