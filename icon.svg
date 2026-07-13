@@ -1,18 +1,12 @@
-# Gold 71 Café · Galaxia OS Web v5.3
+# Gold 71 Café · Galaxia OS v5.4
 
-Versión con cierre de día e inventario pendiente para confirmación administrativa posterior.
+Aplicación web para pedidos, cierres, inventario y administración de Gold 71 Café Galaxia.
 
-## Incluye
-- Administración con Historial de cierres, Inventario y Gráficas.
-- Historial segmentado por día.
-- Cierre del día con inventario pendiente.
-- Confirmación posterior de inventario desde Administración.
-- Edición de pedidos dentro de cierres guardados.
-- Recalculo de ventas, productos e inventario al corregir cierres.
-- Agua mineral a $32 en Mesa / Para llevar.
-- Inventario con Inicial, Compra, Vendido, Esperado, Final y Diferencia.
-- Botones + / - en inventario sin regresar al inicio de la lista.
-- Gráficas de Top productos vendidos y Ventas por origen.
-- Menú, configuración e inventario separados por módulos.
+## Cambios principales
+- Extra universal de $20 disponible en todos los productos.
+- Envases ajustables con botones − / + en Para llevar y Personal.
+- Para llevar calcula automáticamente los envases de productos no embotellados; el usuario puede corregir la cantidad.
+- En Personal los envases empiezan en 0 y se agregan manualmente.
 
-Contraseña de administración: 7171
+## Publicación
+Sube todo el contenido de esta carpeta a la raíz del repositorio de GitHub Pages, reemplazando los archivos anteriores.
