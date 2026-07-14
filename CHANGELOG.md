@@ -1,11 +1,8 @@
 # Changelog
 
-## v6.0
-- Reconstrucción estable con aplicación autocontenida en `index.html`.
-- Inventario actual reiniciado a 0 una sola vez.
-- Botón administrativo para reiniciar el inventario a 0.
-- Conserva pedidos, cierres, historial, gráficas y demás datos existentes.
-- Extra universal de $20 y contador de envases en Para llevar y Personal.
-- Administración con Historial, Inventario y Gráficas.
-- Confirmación posterior del inventario de cierres.
-- Agua mineral a $32 y precios de malteadas en Uber/DiDi.
+## v6.1
+- Menú de Uber/DiDi actualizado con los precios y productos activos enviados por administración.
+- Los productos marcados como retirados permanecen fuera de las plataformas.
+- Se agregó descuento temporal en pesos para pedidos de DiDi y Uber.
+- El descuento puede ajustarse con botones de $1 y $10, se guarda en el pedido y aparece en historial y cierres.
+- Se conserva el menú local y las demás funciones de v6.0.

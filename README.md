@@ -1,11 +1,9 @@
-# Gold 71 Café · Galaxia OS v6.0
+# Gold 71 Café · Galaxia OS v6.1
 
-Versión estable para GitHub Pages y tablet Android.
+Actualización del menú para Uber/DiDi y descuento temporal por pedido.
 
-## Importante
-- Abre siempre `index.html` o el enlace raíz de GitHub Pages.
-- `index.html` incluye internamente estilos y lógica para evitar que la tablet muestre archivos JavaScript como texto.
-- El inventario actual se reinicia automáticamente a 0 una sola vez al abrir esta versión.
-- También existe el botón **Administración → Inventario → Reiniciar a 0**.
+## Descuento temporal
+En pedidos de DiDi o Uber aparece un control para sumar o restar el descuento en pesos con botones de $1 y $10. El total nunca puede quedar por debajo de $0.
 
-Contraseña de Administración: `7171`.
+## Publicación
+Descomprime el ZIP y reemplaza en GitHub todos los archivos y carpetas por los de esta versión.
