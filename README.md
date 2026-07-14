@@ -1,12 +1,11 @@
-# Gold 71 Café · Galaxia OS v5.4
+# Gold 71 Café · Galaxia OS v6.0
 
-Aplicación web para pedidos, cierres, inventario y administración de Gold 71 Café Galaxia.
+Versión estable para GitHub Pages y tablet Android.
 
-## Cambios principales
-- Extra universal de $20 disponible en todos los productos.
-- Envases ajustables con botones − / + en Para llevar y Personal.
-- Para llevar calcula automáticamente los envases de productos no embotellados; el usuario puede corregir la cantidad.
-- En Personal los envases empiezan en 0 y se agregan manualmente.
+## Importante
+- Abre siempre `index.html` o el enlace raíz de GitHub Pages.
+- `index.html` incluye internamente estilos y lógica para evitar que la tablet muestre archivos JavaScript como texto.
+- El inventario actual se reinicia automáticamente a 0 una sola vez al abrir esta versión.
+- También existe el botón **Administración → Inventario → Reiniciar a 0**.
 
-## Publicación
-Sube todo el contenido de esta carpeta a la raíz del repositorio de GitHub Pages, reemplazando los archivos anteriores.
+Contraseña de Administración: `7171`.
