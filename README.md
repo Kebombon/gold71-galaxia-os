@@ -1,4 +1,4 @@
-# Gold 71 Café · Galaxia OS v6.1
+# Gold 71 Café · Galaxia OS v6.2
 
 Actualización del menú para Uber/DiDi y descuento temporal por pedido.
 
@@ -7,3 +7,7 @@ En pedidos de DiDi o Uber aparece un control para sumar o restar el descuento en
 
 ## Publicación
 Descomprime el ZIP y reemplaza en GitHub todos los archivos y carpetas por los de esta versión.
+
+
+## Cambio v6.2
+- El descuento temporal en pesos ahora también está disponible en pedidos de Mesa.

@@ -47,7 +47,7 @@ function renderCart(){
     const q=currentPackagingQty();
     html+=`<div class="item packagingControl"><b>Envases</b><small>${money(q*APP.packagingFee)}</small><div class="ctrl"><button id="packMinus">−</button><span class="pill">${q}</span><button id="packPlus">+</button>${state.origin==='llevar'&&state.packagingManual?'<button id="packAuto">Automático</button>':''}</div></div>`;
   }
-  if(state.origin==='didi'||state.origin==='uber'){
+  if(state.origin==='mesa'||state.origin==='didi'||state.origin==='uber'){
     const d=Math.max(0,Number(state.discountAmount||0));
     html+=`<div class="item discountControl"><b>Descuento temporal</b><small>−${money(d)}</small><div class="ctrl"><button id="discMinus10">− $10</button><button id="discMinus1">− $1</button><span class="pill">${money(d)}</span><button id="discPlus1">+ $1</button><button id="discPlus10">+ $10</button><button id="discReset">Limpiar</button></div></div>`;
   }

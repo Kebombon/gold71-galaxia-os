@@ -1,7 +1,7 @@
 // Configuración general de Gold 71 Café · Galaxia OS
 // Este archivo concentra opciones de operación para no mezclarlas con la lógica principal.
 window.GOLD71_CONFIG = {
-  version: '6.1',
+  version: '6.2',
   ownerPassword: '7171',
   app: {
     packagingFee: 5,
